@@ -2,10 +2,12 @@
 
 class ShoppingBasket {
   constructor() {
-    ;
+    this.basket = []
   }
   getTotalPrice() {
-    return 0;
+    if (this.basket.length === 0) {
+      return 0;
+    }
   }
 }
 
