@@ -2,6 +2,7 @@
 
 const ShoppingBasket = require('./shoppingbasket');
 const marsDouble = { getPrice: () => 4.99 }
+const skittleDouble = { getPrice: () => 3.99 }
 
 describe('ShoppingBasket', () => {
   it('Has a zero total price when first created', () => {
@@ -15,8 +16,8 @@ describe('ShoppingBasket', () => {
   });
   it('Returns the price of the prices of multiple objects in basket', () => {
     let basket = new ShoppingBasket();
-    basket.addItem( marsDouble );
-    basket.addItem( marsDouble );
-    expect(basket.getTotalPrice()).toBe((marsDouble.getPrice())+(marsDouble.getPrice()));
+    basket.addItem( skittleDouble );
+    basket.addItem( skittleDouble );
+    expect(basket.getTotalPrice()).toBe((skittleDouble.getPrice())+(skittleDouble.getPrice()));
   });
 });
