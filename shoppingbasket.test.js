@@ -1,7 +1,7 @@
 // File: shoppingbasket.test.js
 
 const ShoppingBasket = require('./shoppingbasket');
-const candyDouble = { getPrice: () => 3.99 }
+const marsDouble = { getPrice: () => 4.99 }
 
 describe('ShoppingBasket', () => {
   it('Has a zero total price when first created', () => {
@@ -10,13 +10,13 @@ describe('ShoppingBasket', () => {
   });
   it('Returns the price of a single object when only one in basket', () => {
     let basket = new ShoppingBasket();
-    basket.addItem( candyDouble );
-    expect(basket.getTotalPrice()).toBe(candyDouble.getPrice());
+    basket.addItem( marsDouble );
+    expect(basket.getTotalPrice()).toBe(marsDouble.getPrice());
   });
   it('Returns the price of the prices of multiple objects in basket', () => {
     let basket = new ShoppingBasket();
-    basket.addItem( candyDouble );
-    basket.addItem( candyDouble );
-    expect(basket.getTotalPrice()).toBe((candyDouble.getPrice())+(candyDouble.getPrice()));
+    basket.addItem( marsDouble );
+    basket.addItem( marsDouble );
+    expect(basket.getTotalPrice()).toBe((marsDouble.getPrice())+(marsDouble.getPrice()));
   });
 });
