@@ -13,4 +13,10 @@ describe('ShoppingBasket', () => {
     basket.addItem( candyDouble );
     expect(basket.getTotalPrice()).toBe(candyDouble.getPrice());
   });
+  it('Returns the price of the prices of multiple objects in basket', () => {
+    let basket = new ShoppingBasket();
+    basket.addItem( candyDouble );
+    basket.addItem( candyDouble );
+    expect(basket.getTotalPrice()).toBe((candyDouble.getPrice())+(candyDouble.getPrice()));
+  });
 });
